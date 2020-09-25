@@ -437,6 +437,7 @@ const PDFViewerApplication = {
   _wheelUnusedTicks: 0,
 
   async initialize(appConfig) {
+
     this.preferences = this.externalServices.createPreferences();
     this.appConfig = appConfig;
     await this._readPreferences();
@@ -2547,6 +2548,7 @@ function webViewerTouchStart(evt) {
 }
 
 function webViewerClick(evt) {
+  console.log(evt)
   if (PDFViewerApplication.triggerDelayedFallback && PDFViewerApplication.pdfViewer.containsElement(evt.target)) {
     PDFViewerApplication.triggerDelayedFallback();
   }
